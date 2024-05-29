@@ -1,6 +1,9 @@
-import React from 'react'
 import './css.css'
-const Navbar = ({title}) => {
+import React, { useState } from 'react';
+
+const Navbar = () => {
+  const [title, setTitle] = useState('');
+
   return (
     <header >
       <nav className='navbar'>

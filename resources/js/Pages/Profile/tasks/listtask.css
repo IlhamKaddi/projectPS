@@ -102,3 +102,7 @@
  opacity:20%;
   padding:2px;
 }
+
+.taskbutton{
+  display:flex;
+}

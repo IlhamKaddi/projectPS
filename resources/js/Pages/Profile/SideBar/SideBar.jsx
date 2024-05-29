@@ -8,11 +8,15 @@ import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import '../Notes/note.css';
 
-const SideBar = ({ onTitleChange }) => {
+const SideBar = () => {
  const [collapsed, setCollapsed] = useState(false);
 
  const toggleSidebar = () => {
     setCollapsed(!collapsed);
+ };
+
+ const handleTitleChange = (newTitle) => {
+    setTitle(newTitle);
  };
 
  return (
@@ -25,7 +29,7 @@ const SideBar = ({ onTitleChange }) => {
               icon={<EventNoteIcon />}
               component={<InertiaLink href="/note" />}
               title='Notes'
-              onClick={() => onTitleChange('Notes')}
+              onClick={() => handleTitleChange('Notes')}
             >
               Notes
             </MenuItem>
@@ -33,9 +37,9 @@ const SideBar = ({ onTitleChange }) => {
           <div className='menu-item'>
             <MenuItem
               icon={<DeleteOutlineIcon />}
-              component={<InertiaLink href="/task" />}
+              component={<InertiaLink href="/job" />}
               title='tasks'
-              onClick={() => onTitleChange('tasks')}
+              onClick={() => handleTitleChange('tasks')}
             >
             tasks
             </MenuItem>
@@ -45,7 +49,7 @@ const SideBar = ({ onTitleChange }) => {
               icon={<TurnedInNotIcon />}
               component={<InertiaLink href="/Callender" />}
               title='Callender'
-              onClick={() => onTitleChange('Callender')}
+              onClick={() => handleTitleChange('Callender')}
             >
             Callender
             </MenuItem>

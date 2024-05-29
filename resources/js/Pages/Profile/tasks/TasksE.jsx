@@ -4,12 +4,13 @@ import { InertiaLink } from '@inertiajs/inertia-react';
 import { InertiaHead } from '@inertiajs/inertia-react';
 import Navbar from '../header/Navbar';
 import SideBar from '../SideBar/SideBar';
-import './note.css'
-import NoteContent from './NoteContent';
+import '../Notes/note.css';
+
+import IndexTask from './indexTask';
 import { Inertia } from '@inertiajs/inertia';
 
-const SideBarRoutes = ({content,notes}) => {
-
+const TasksE = ({jobs}) => {
+ 
 
 
  return (
@@ -23,7 +24,7 @@ const SideBarRoutes = ({content,notes}) => {
         </div>
         <div className="content-container">
           <div className="content">
-            <NoteContent   notes={notes}/>
+            <  IndexTask jobs= {jobs}/>
             
             {/* Your page components will be rendered here by Inertia.js */}
           </div>
@@ -32,4 +33,4 @@ const SideBarRoutes = ({content,notes}) => {
  );
 };
 
-export default SideBarRoutes;
+export default TasksE ;

@@ -61,21 +61,16 @@ const ListTask = ({ formData, setFormData }) => {
         </div>
       ))}
 
-    <input type="checkbox"/>  
-
-  
-
-  
+<label>tasks:</label> <br />
+    {/* <input type="checkbox"/>   */}
+    <div className='taskbutton'>
            <input className="text" type="text"  value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Add a task..." />
-           
-           
-
-
       <button type="button" onClick={addTask} className='icon-add'>
       <CgAdd />
       </button>
+      </div>
     </div>
   );
 };

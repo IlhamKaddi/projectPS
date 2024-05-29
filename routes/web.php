@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\NoteController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -10,7 +11,7 @@ use Inertia\Inertia;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
-|--------------------------------------------------------------------------
+|--------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
@@ -34,27 +35,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-<<<<<<< HEAD
-=======
+
     Route::get('note', [NoteController::class, 'index'])->name('note.index');
     Route::post('add', [NoteController::class, 'store'])->name('note.store');
     Route::delete('/note/{id_note}', [NoteController::class, 'destroy'])->name('note.destroy');
     Route::post('/profile/add', [ProfileController::class, 'add'])->name('profile.add');
     Route::get('/profile/test', [ProfileController::class, 'test'])->name('profile.test');
->>>>>>> 2d56d981e1d0d57f41e5b94fb4e1ddd6c3a413ba
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
-
-    //  create tasks route 
-    // Route::get('/task', [TaskController::class, 'index'])->name('task.index');
-    //  Route::post('/task/store', [TaskController::class, 'store'])->name('task.store');
-    //  Route::patch('/tasks/{task}/toggle', [TaskController::class, 'toggle'])->name('task.toggle');
-    //  Route::delete('/task/destroy/{id}', [TaskController::class, 'destroy'])->name('task.destroy');
-   
-      //  create tasks route 
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy'); //  create tasks route 
     
       Route::get('/job', [JobController::class, 'index'])->name('job.index');
       Route::post('/job/store', [JobController::class, 'store'])->name('job.store');

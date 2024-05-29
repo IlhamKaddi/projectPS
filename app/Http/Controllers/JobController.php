@@ -20,7 +20,7 @@ class JobController extends Controller
 
         // $submittedJobs = Job::where('user_id', auth()->id())->with('tasks')->get();
 
-        return Inertia::render('Profile/tasks/indexTask', [
+        return Inertia::render('Profile/tasks/TasksE', [
             'jobs' => $jobs,
             // 'submittedJobs' => $submittedJobs,
             
@@ -122,10 +122,5 @@ class JobController extends Controller
         return redirect()->back();
     }
 
-
-
-
-
-   
-
 }
+
