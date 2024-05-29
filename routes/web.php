@@ -18,6 +18,15 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
+Route::get('/test',function(){
+return Inertia::render('FlewbiteTest');
+});
+
+
+
+=======
+>>>>>>> 61ebc7be209da92e624962c1b554f85314b2457c
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -39,6 +48,11 @@ Route::middleware('auth')->group(function () {
     Route::get('note', [NoteController::class, 'index'])->name('note.index');
     Route::post('add', [NoteController::class, 'store'])->name('note.store');
     Route::delete('/note/{id_note}', [NoteController::class, 'destroy'])->name('note.destroy');
+    Route::get('/note/edit/{id_note}', [NoteController::class, 'edit'])->name('note.edit');
+    Route::post('/note/{id_note}', [NoteController::class, 'update'])->name('note.update');
+    Route::delete('/note/{id_note}/file/{id_file}', [NoteController::class, 'deleteFile'])->name('note.deleteFile');
+
+
     Route::post('/profile/add', [ProfileController::class, 'add'])->name('profile.add');
     Route::get('/profile/test', [ProfileController::class, 'test'])->name('profile.test');
 

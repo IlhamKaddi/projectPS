@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { InertiaLink } from '@inertiajs/inertia-react';
+import { InertiaLink} from '@inertiajs/inertia-react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import { Link } from '@inertiajs/react'
+import { GiNotebook } from "react-icons/gi";
+import { FaTasks,FaRegCalendarAlt} from "react-icons/fa";
+import { GrNotes } from "react-icons/gr";
 
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import EventNoteIcon from '@mui/icons-material/EventNote';
@@ -26,8 +30,8 @@ const SideBar = () => {
           <MenuItem icon={<MenuOutlinedIcon />} onClick={toggleSidebar}></MenuItem>
           <div className='menu-item'>
             <MenuItem
-              icon={<EventNoteIcon />}
-              component={<InertiaLink href="/note" />}
+              icon={<GrNotes  size={25}/>}
+              component={<Link href={route('note.index')} />}
               title='Notes'
               onClick={() => handleTitleChange('Notes')}
             >
@@ -38,6 +42,10 @@ const SideBar = () => {
             <MenuItem
               icon={<DeleteOutlineIcon />}
               component={<InertiaLink href="/job" />}
+              icon={<FaTasks size={20}/>
+            }
+              component={<Link href="/task" />}
+
               title='tasks'
               onClick={() => handleTitleChange('tasks')}
             >
@@ -46,8 +54,8 @@ const SideBar = () => {
           </div>
           <div className='menu-item'>
             <MenuItem
-              icon={<TurnedInNotIcon />}
-              component={<InertiaLink href="/Callender" />}
+              icon={<FaRegCalendarAlt size={23} />}
+              component={<Link href="/Callender" />}
               title='Callender'
               onClick={() => handleTitleChange('Callender')}
             >
